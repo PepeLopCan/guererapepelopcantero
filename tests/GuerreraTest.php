@@ -24,19 +24,17 @@ class GuerreraTest extends TestCase{
 
 
     public function testPoti1(){
-       for ($i=0; $i < 3; $i++) { 
         $this->op->herida();
-       }
+        $this->op->herida();
+        $this->op->herida();
         $this->op->pocion();
         $this->assertEquals("muerta",$this->op->getEstado());
         $this->assertEquals(-5,$this->op->getVida());
     }
 
     public function testPoti2(){
-       
-        for ($i=0; $i < 2; $i++) { 
-            $this->op->herida();
-           }
+        $this->op->herida();
+        $this->op->herida();
         $this->op->pocion();
         $this->assertEquals("viva",$this->op->getEstado());
         $this->assertEquals(5,$this->op->getVida());
